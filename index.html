@@ -11,24 +11,34 @@
    <header>
       <img id="logo" src="Imagenes/Logo2.png" alt="logo">
 
-      <div class="menu">
-         <button id="menu">Menú</button>
+      <ul class="catalogo">
+      <li><a href="">Catálogo</a>
          <ul>
-            catálogo
-            <li>Biografía</li>
-            <li>Filosofía</li>
-
+            <li><a href="">Inicio 1</a></li>
+            <li><a href="">Inicio 2</a>
+               <ul>
+                  <li><a href="">Servicios1</a>
+                  <li><a href="">Servicios2</a>
+                  <li><a href="">Servicios3</a>
+               </ul>
+            </li>
+            <li><a href="">Inicio 3</a></li>
+            <li><a href="">Inicio 4</a></li>
          </ul>
-      </div>
-
+      </li>
+      </ul>
+      
       <div class="buscador">
          <input type="text" placeholder="Título, Autor o ISBN">
          <button><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
-      <div class="contacto">
-         <p>Iniciar Sesión <i class="fa-regular fa-user"></i></p>
-         <p>Contacto <i class="fa-brands fa-whatsapp"></i></p>
-         <p>L. de Compras<i class="fa-solid fa-cart-shopping"></i></p>
+
+      <div>
+         <ul class="contacto">
+            <li><a href="">Iniciar sesion/Registrate <i class="fa-regular fa-user"></i></a></li>
+            <li><a href="">Contacto <i class="fa-brands fa-whatsapp"></i></a></li>
+            <li><a href="">Carrito <i class="fa-solid fa-cart-shopping"></i></a></li>
+         </ul>
       </div>
    </header>
 
@@ -37,11 +47,24 @@
          <h2>Ficción</h2>
          <div>
             <div class="card">
-               <img src="Imagenes/Las aventuras de Sherlock Holmes.webp" alt="Las aventuras de Sherlock Holmes">
-               <div class="card-info">
-                  <p class="titulo">Las Aventuras de Sherlock Holmes</p>
-                  <p class="autor">Arthur Conan Doyle</p>
-               </div>  
+               <div class="face front">
+                  <img src="Imagenes/Las aventuras de Sherlock Holmes.webp" alt="Las aventuras de Sherlock Holmes">
+                  <div class="info">
+                     <p class="titulo">Las Aventuras de Sherlock Holmes</p>
+                     <p class="autor">Arthur Conan Doyle</p>
+                  </div>  
+               </div>
+               <div class="face back">
+                  <div class="info">
+                     <p class="titulo">Las Aventuras de Sherlock Holmes</p>
+                     <p class="autor">Arthur Conan Doyle</p>
+                  </div> 
+                  <div class="descripcion">
+                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab provident, dolores eveniet mollitia magni aperiam at laborum dignissimos harum inventore, repudiandae qui sint a fugit fuga laboriosam! Temporibus, nulla sed.</p>
+                  </div>
+                  <h3>Precio : $...</h3>
+               </div>
+
             </div>
             <div class="card">
                <img src="Imagenes/Las aventuras de Sherlock Holmes.webp" alt="Las aventuras de Sherlock Holmes">

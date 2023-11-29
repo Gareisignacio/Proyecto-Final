@@ -15,7 +15,7 @@ header{
    justify-content: space-between;
    align-items: center;
    height: 100px;
-   padding: 20px;
+   padding: 0px 20px;
    background: orange;
    font-size: 2em;
    position: fixed;
@@ -23,13 +23,54 @@ header{
 #logo{
    width: 100px;
    height: 100px;
-   margin-left: 75px;
+   margin-left: 10px;
 }
+
+ul li{
+   list-style: none;
+}
+.contacto{
+   width: 100%;
+   display: flex;
+}
+.contacto li a, .catalogo li a{
+   background-color: #000;
+   color: #fff;
+   padding: 10px 10px;
+   font-size: 1rem;
+   text-decoration: none;
+   margin: 0 5px;
+   border-radius: 5px;
+
+}
+.contacto li a:hover{
+   background-color: #434343;
+   border: 1px solid white;
+}
+ 
+.catalogo > li{
+   float: left;
+} 
+.catalogo li ul{
+   display: none;
+   position: absolute;
+   min-width: 140px;
+}
+.catalogo li:hover ul{
+   display:block;
+}
+/* .catalogo li ul li{
+   display: none;
+} */
+.catalogo li ul:hover li{
+   display: block;
+}
+
 .buscador{
-   width:700px;
+   width: 50%;
    max-width: 100%;
    position: relative;
-   height: 50px;
+   height: 40px;
 }
 .buscador input{
    width:100%;
@@ -80,20 +121,83 @@ section div{
    font-size: 2em;
    text-decoration: underline;
 }
-
 .card{
+   position: relative;
    width: 380px;
    height: 500px;
    margin: 20px 20px;
-   cursor: pointer;
-   border-radius: 5px;
    box-shadow: 5px 5px 2px black;
+}
+
+.card .face{
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   backface-visibility: hidden;
+   cursor: pointer;
+   border-radius: 10px;
+   overflow: hidden;
+   transition: .5s;
+}
+
+.card .front{
+   transform: perspective(600px) rotateY(180deg);
+   box-shadow: 0px 5px 10px #000;
+}
+.card .front img{
+   position: absolute;
+   width: 100%;
+   height: 88%;
+   object-fit: cover;
+   border-radius: 10px;
+}
+.card .front .info{
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   height: 12%;
+   display: flex;
+   justify-content: center;
+   text-align: center;
+   text-shadow: 2px 2px 2px black;
+   background-color: rgb(145, 81, 81);
+   color: antiquewhite;
+}
+.info .autor{
+   font-size: 1rem;
+}
+.info .titulo{
+   font-size: 1.5rem;
+}
+
+.card .back{
+   transform: perspective(600px) rotateY(0deg);
+   background: rgb(3, 35, 54);
+   padding: 15px;
+   color: #f3f3f3;
+   display:flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+.card .back .info{
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   height: 20%;
+}
+.card .back .descripcion{
+   width: 100%;
+   height: 65%;
+}
+.card .back h3{
+   text-align: end;
 }
 
 .card img{
    width: 100%;
    height: 90%;
    overflow: hidden;
+   border-radius: 10px 10px 0px 0px;
 }
 
 .card-info{
@@ -101,12 +205,8 @@ section div{
    display: flex;
    flex-direction: column;
    text-align: center;
+   text-shadow: 2px 2px 2px black;
    background-color: rgb(145, 81, 81);
    color: antiquewhite;
-}
-.card-info .autor{
-   font-size: 1rem;
-}
-.card-info .titulo{
-   font-size: 1.5rem;
+   border-radius: 0px 0px 10px 10px;
 }
