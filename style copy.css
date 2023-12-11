@@ -1,12 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Fenix&family=Kalnia:wght@500&family=Playfair+Display:ital@1&display=swap');
+:root{
+   --principal-font: 'Kalnia', sans-serif;
+   --secondary-font: 'Playfair Display', serif;
+   --thirdly-font: 'Fenix', serif;
+
+}
 *{
    margin: 0;
    padding: 0;
    box-sizing: border-box;
 }
+html{
+   scroll-behavior: smooth;
+   scroll-padding-top: 7em;
+}
 body{
-   margin: 0;
-   width: 100vw;
-   height: 100vh;
+   font-family: var(--principal-font);
+   background-color: #FF3700;
+   overflow-x: hidden;
 }
 header{
    width: 100%;
@@ -15,10 +26,12 @@ header{
    align-items: center;
    height: 100px;
    padding: 0px 20px;
-   background: orange;
+   background-color: #A70202;
    font-size: 2em;
-   position: fixed;
+   position: sticky;
    top: 0;
+   font-family: var(--secondary-font);
+   border-bottom: 3px solid black;
 }
 #logo{
    width: 100px;
@@ -43,7 +56,7 @@ ul li{
    border-radius: 5px;
 
 }
-.contacto li a:hover{
+.contacto li a:hover, .catalogo li a:hover{
    background-color: #434343;
    border: 1px solid white;
 }
@@ -57,14 +70,13 @@ ul li{
    min-width: 140px;
 }
 .catalogo li:hover ul{
-   display:block;
+   display:flex;
+   flex-direction: row;
 }
-/* .catalogo li ul li{
-   display: none;
+
+/* .catalogo li ul:hover li{
+   display: flex;
 } */
-.catalogo li ul:hover li{
-   display: block;
-}
 
 .buscador{
    width: 50%;
@@ -100,8 +112,92 @@ ul li{
 }
 
 /* main container */
+main{
+   display: flex;
+   flex-direction: column;
+   margin: 0;
+   padding: 0;
+   width:100vw;
+}
 
-.container{
+section{
+   height: 80vh;
+   margin-left: .5em;
+   margin-right: 1.6em;
+   margin-top: 1.7em;
+}
+/* section:first-of-type{
+   margin-top: 7em;
+} */
+section h2{
+   /* width: 100vw; */
+   text-align: center;
+   text-decoration: underline;
+   font-size: 2em; 
+}
+.card-list{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.card{
+   width: 15em;
+   height: 25em;
+   margin: 1em 0em;
+   box-shadow: 5px 5px 2px black;
+   border-radius: 10px;
+   background-color: #A70202;
+   cursor: pointer;
+
+}
+.card img{
+   border-top-right-radius: 10px;
+   border-top-left-radius: 10px ;
+   width:100%;
+   height: 80%;
+}
+.card-info{
+   font-family: var(--secondary-font);
+   font-weight: bold;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   color: white;
+   text-shadow: 1px 2px #000;
+}
+.carrito{
+   position: absolute;
+   font-size: 1.5em;
+   padding-bottom: 8.5em;
+   text-shadow: 1px 2px #000;
+   color: #fff ;
+   display: none;
+}
+.card:hover{
+   background-color: #000;
+}
+.card:hover .precio{
+   position: absolute;
+   font-size: 2em;
+   padding-bottom: 10em;
+}
+.card:hover img{
+   filter: opacity(0.5);
+}
+.card:hover .carrito{
+   display: block;
+}
+.card:hover .titulo{
+   position: absolute;
+   text-align: center;
+   width:11em;
+   font-size: 1.5em;
+   padding-bottom: 19em;
+}
+
+/* main{
    display: flex;
    justify-content: space-around;
    flex-wrap: wrap;
@@ -128,7 +224,6 @@ section div{
 }
 
 .card .front{
-   transform: perspective(600px) rotateY(180deg);
    box-shadow: 0px 5px 10px #000;
 }
 .card .front img{
@@ -163,6 +258,7 @@ section div{
    flex-direction: column;
    justify-content: space-between;
 }
+
 .card .back .info{
    display: flex;
    justify-content: center;
@@ -193,4 +289,4 @@ section div{
    background-color: rgb(145, 81, 81);
    color: antiquewhite;
    border-radius: 0px 0px 10px 10px;
-}
+} */
